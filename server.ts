@@ -2,10 +2,12 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const mongoose = require("mongoose");
-
 const app = express();
+
 app.use(cors());
 app.use(express.json());
+
+
 
 // Replace with your email and MongoDB URI
 const OWNER_EMAIL = "uknownwarrior04@gmail.com";
@@ -103,4 +105,7 @@ app.post("/send-email", async (req:any, res:any) => {
   }
 });
 
-app.listen(5000, () => console.log("Server running on http://localhost:5000"));
+module.exports = app;
+
+
+// app.listen(5000, () => console.log("Server running on http://localhost:5000"));
